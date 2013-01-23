@@ -1,1 +1,12 @@
 == Welcome to Meet me application
+To Do
+Rate your ride
+ignore list
+ignore yourself to other
+maintain history
+Allow new request from history
+Most popular - depending upon current location and timing of user
+captcha
+Vehicle and user relationship
+
+Domain Name - raasta, humrahi

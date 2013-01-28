@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "UserPages" do
   subject { page }
-  let(:base_title) { "Place holder" }
+  let(:base_title) { "raC looP" }
 
   describe "signup page" do
     before { visit signup_path }

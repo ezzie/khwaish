@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "StaticPages" do
   
   subject { page }
-  let(:base_title) { "Place holder" }
+  let(:base_title) { "raC looP" }
   
   describe "Home page" do
     before { visit root_path }
@@ -32,5 +32,20 @@ describe "StaticPages" do
 
     it { should have_selector('h1',    text: 'Contact Us') }
     it { should have_selector('title', text: "#{base_title} | Contact Us") }
+  end
+  
+  it "should have the right links on the layout" do
+    visit root_path
+    click_link "About"
+    page.should have_selector 'title', text: "#{base_title} | About Us"
+    click_link "Help"
+    page.should have_selector 'title', text: "#{base_title} | Help"
+    click_link "Contact"
+    page.should have_selector 'title', text: "#{base_title} | Contact Us"
+    click_link "Home"
+    click_link "Sign up now!"
+    page.should have_selector 'title', text: "#{base_title} | Sign Up"
+    click_link "raC looP"
+    page.should have_selector 'title', text: "#{base_title}"
   end
 end

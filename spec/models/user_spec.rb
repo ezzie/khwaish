@@ -2,11 +2,12 @@
 #
 # Table name: users
 #
-#  id         :integer          not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id              :integer          not null, primary key
+#  name            :string(255)
+#  email           :string(255)
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  password_digest :string(255)
 #
 
 require 'spec_helper'
@@ -41,6 +42,14 @@ describe User do
   
   describe "when email is not present" do
     before { @user.email = " " }
+    it { should_not be_valid }
+  end
+  
+  describe "when email is too long" do
+    before { 
+      name = "a" * 100
+      @user.email = name + "@gmail.com"
+    }
     it { should_not be_valid }
   end
   
